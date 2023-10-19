@@ -17,7 +17,8 @@ public class AcademiManagementMain {
 	public static void mainMenu() {
 
 		int choiceNum;
-		while (true) {
+		boolean stopFlag = false;
+		while (!stopFlag) {
 			try {
 				MenuViewer.mainMenuView();
 				choiceNum = Integer.parseInt(MenuViewer.input.readLine());
@@ -35,16 +36,18 @@ public class AcademiManagementMain {
 					traineeMenu();
 					break;
 				case MENU_CHOICE.EXIT:
+					stopFlag = true;
 					System.out.println("프로그램을 종료합니다.");
-					return;
+					break;
+
 				default:
 					System.out.println("해당 메뉴 번호만 입력하세요.");
 				}
 			} catch (Exception e) {
 				System.out.println("\n입력에 오류가 있습니다.\n프로그램을 다시 시작하세요.");
-
-				return;
+				stopFlag = true;
 			}
+
 		}
 	}
 
@@ -136,7 +139,6 @@ public class AcademiManagementMain {
 		TraineeRegisterManager traineeManager = new TraineeRegisterManager();
 		MenuViewer.traineeMenuView();
 		choiceNum = Integer.parseInt(MenuViewer.input.readLine());
-		choiceNum = Integer.parseInt(MenuViewer.input.readLine());
 		switch (choiceNum) {
 		case TRAINEE_CHOICE.LIST:
 			System.out.println("");
@@ -150,7 +152,6 @@ public class AcademiManagementMain {
 			System.out.println("");
 			traineeManager.traineeDelete();
 			break;
-
 		case TRAINEE_CHOICE.MAIN:
 			return;
 		default:
