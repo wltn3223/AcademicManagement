@@ -9,8 +9,8 @@ import model.TraineeVO;
 
 public class TraineeDAO {
 	public void setTraineeRegiste(TraineeVO tvo) throws Exception {
-		String sql = "insert into trainee " + "(no, sd_num, l_abbre, t_section,t_date)" + " values "
-				+ "(trainee_seq.nextval, ?, ?, ?, sysdate)";
+		String sql = "insert into trainee " + "(sd_num, I_ADDRE, t_section,t_date)" + " values "
+				+ "(?, ?, ?, sysdate)";
 
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -77,9 +77,9 @@ public class TraineeDAO {
 	}
 
 	public void getTraineeTotalList(String sd_num) throws Exception {
-		String sql = "select tr.no as no, tr.sd_num as sd_num, tr.l_abbre asl_abbre, le.l_name as l_name, st.sd_name as sd_name, t_section, t_date "
+		String sql = "select tr.no as no, tr.sd_num as sd_num, tr.I_ADDRE as l_abbre, le.I_NAME as l_name, st.sd_name as sd_name, t_section, t_date "
 				+ " from trainee tr, lesson le , student st "
-				+ " where tr.sd_num = ? and tr.l_abbre = le.l_abbre and tr.sd_num = st.sd_num order byt_date";
+				+ " where tr.sd_num = ? and tr.I_ADDRE= le.I_ADDRE and tr.sd_num = st.sd_num order byt_date";
 
 		Connection con = null;
 		PreparedStatement pstmt = null;
