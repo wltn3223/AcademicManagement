@@ -3,7 +3,7 @@ package controller;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class DBUtill {
+public class DBUtil {
 	static final String driver = "oracle.jdbc.driver.OracleDriver";
 	static final String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
 	
