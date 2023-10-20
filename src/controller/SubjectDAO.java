@@ -50,7 +50,7 @@ public class SubjectDAO {
 	}
 
 	public void setSubjectRegiste(SubjectVO svo) throws Exception {
-		String sql = "insert into subject(no, s_num, s_name) values(subject_seq.nextval, ?, ?)";
+		String sql = "insert into subject(s_num, s_name) values(?, ?)";
 
 		Connection con = null;
 		PreparedStatement pstmt = null;
