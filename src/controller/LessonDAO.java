@@ -23,8 +23,8 @@ public class LessonDAO {
 			while (rs.next()) {
 				lVo = new LessonVO();
 				lVo.setNo(rs.getInt("no"));
-				lVo.setL_abbre(rs.getString("l_abbre"));
-				lVo.setL_name(rs.getString("l_name"));
+				lVo.setL_abbre(rs.getString("I_ADDRE"));
+				lVo.setL_name(rs.getString("I_NAME"));
 
 				System.out.println(lVo.getNo() + "\t" + lVo.getL_abbre() + "\t" + lVo.getL_name());
 
@@ -47,7 +47,7 @@ public class LessonDAO {
 	}
 
 	public void setLessonRegiste(LessonVO lvo) throws Exception {
-		String sql = "insert into lesson " + "(l_abbre, l_name)" + " values" + "(?, ?)";
+		String sql = "insert into lesson(I_ADDRE,I_NAME)" + " values" + "(?, ?)";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		try {
@@ -80,7 +80,7 @@ public class LessonDAO {
 
 	// 과목 수정
 	public boolean setLessonUpdate(LessonVO lvo) throws Exception {
-		String sql = "update lesson set l_abbre=?, l_name=? where no=?";
+		String sql = "update lesson set I_ADDRE=?, I_NAME=? where no=?";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		boolean lessonUpdateSucess = false;

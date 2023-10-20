@@ -1,12 +1,7 @@
 package model;
 
 public class StudentVO {
-	@Override
-	public String toString() {
-		return "StudentVO [no=" + no + ", sd_num=" + sd_num + ", sd_name=" + sd_name + ", sd_id=" + sd_id
-				+ ", sd_passwd=" + sd_passwd + ", s_num=" + s_num + ", sd_birthday=" + sd_birthday + ", sd_phone="
-				+ sd_phone + ", sd_address=" + sd_address + ", sd_email=" + sd_email + ", sd_date=" + sd_date + "]";
-	}
+	
 
 	private int no; // 학생 일련번호
 	private String sd_num; // 학번
@@ -127,6 +122,13 @@ public class StudentVO {
 
 	public void setSd_date(String sd_date) {
 		this.sd_date = sd_date;
+	}
+	@Override
+	public String toString() {
+		return 	this.getNo() + "\t" + this.getSd_num() +
+				"\t" + this.getSd_name() + "\t" + this.getSd_id() + "\t" + this.getSd_passwd() + "\t" +
+				this.getS_num() + "\t\t" + this.getSd_birthday() + "\t" + this.getSd_phone() + "\t" +
+				this.getSd_address() + "\t\t" + this.getSd_email() + "\t\t" + this.getSd_date();
 	}
 
 }
